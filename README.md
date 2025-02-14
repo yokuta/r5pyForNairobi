@@ -9,7 +9,7 @@ This repository contains a Python script (`main.py`) that calculates travel time
   - [Requirements](#Requirements)
   - [Installation](#Installation)
   - [Usage](#Usage)
-  - [Data Sources](#Data_sources)
+- [Data Sources](#Data_sources)
 
 
 ## Introduction
@@ -54,7 +54,7 @@ Place the downloaded files in the Data folder.
 
 The script will output the estimated travel time in minutes between the origin and destination points:
   - Estimated travel time (minutes): 50
-### Data Sources
+## Data Sources
 - OSM Data: Geofabrik Kenya [Download OSM PBF](https://download.geofabrik.de/africa/kenya.html)
   To create the osm file for Nairobi check this [repository](https://github.com/openstreetmap/osmosis/releases/tag/0.49.2) and this [webpage](https://wiki.openstreetmap.org/wiki/Osmosis/Quick_Install_(Windows)) to understand how to cut it. Also   you can download the one I uploaded, which is already cut. Command I used with osmosis to cut the osm file:
     `osmosis --read-pbf kenya-latest.osm.pbf --bounding-box left=36.10 right=38.10 top=-1.00 bottom=-1.60 --write-pbf nairobi.osm.pbf`
