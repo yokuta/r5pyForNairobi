@@ -20,3 +20,19 @@ To run this script, you need the following:
       - r5py
       - geopandas
       - shapely
+## Installation
+1. Clone this repository:
+  - `git clone https://github.com/yokuta/r5pyForNairobi.git`
+  - `cd r5pyForNairobi`
+Install the required Python libraries:
+
+bash
+Copy
+pip install r5py geopandas shapely
+Download the necessary data files:
+
+OSM data for Nairobi: Download OSM PBF
+
+GTFS data for Nairobi: Download GTFS (replace with the actual GTFS link)
+
+Place the downloaded files in the Data folder.
