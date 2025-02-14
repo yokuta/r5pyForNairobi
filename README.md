@@ -39,6 +39,7 @@ Place the downloaded files in the Data folder.
   - python main.py
 
 **Example Output**
+
 The script will output the estimated travel time in minutes between the origin and destination points:
   - Estimated travel time (minutes): 50
 ## Data Sources
