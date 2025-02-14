@@ -37,6 +37,7 @@ Place the downloaded files in the Data folder.
 2. Modify the origin_coords and destination_coords dictionaries to specify your desired origin and destination coordinates.
 3. Run the script:
   - python main.py
+
 **Example Output**
 The script will output the estimated travel time in minutes between the origin and destination points:
   - Estimated travel time (minutes): 50
