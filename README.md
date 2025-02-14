@@ -24,7 +24,7 @@ The script `main.py` calculates the travel time between two geographic coordinat
 6. **Sixth cell:** In this cell, we created a GIF image of the line graph we previously created. We simply animated the graph and saved it in GIF format within the same repository. The Gif created is [animation](animation.gif).
 7. **Seventh cell:** The last cell contains code to visualize the points we selected for the work and the order in which we selected them.
 
-
+## main.py
 ### Requirements
 To run this script, you need the following:
   - Python 3.7 or higher
@@ -54,6 +54,8 @@ Place the downloaded files in the Data folder.
 
 The script will output the estimated travel time in minutes between the origin and destination points:
   - Estimated travel time (minutes): 50
+
+    
 ## Data Sources
 - OSM Data: Geofabrik Kenya [Download OSM PBF](https://download.geofabrik.de/africa/kenya.html)
   To create the osm file for Nairobi check this [repository](https://github.com/openstreetmap/osmosis/releases/tag/0.49.2) and this [webpage](https://wiki.openstreetmap.org/wiki/Osmosis/Quick_Install_(Windows)) to understand how to cut it. Also   you can download the one I uploaded, which is already cut. Command I used with osmosis to cut the osm file:
