@@ -1,17 +1,20 @@
 # r5pyForNairobi
-This repository contains a Python script (main.py) that calculates travel times between two points in Nairobi, Kenya, using the r5py library. The script leverages OpenStreetMap (OSM) data and GTFS (General Transit Feed Specification) data to compute travel times via public transit and walking.
+This repository contains a Python script (`main.py`) that calculates travel times between two points in Nairobi, Kenya, using the **r5py** library. The script leverages OpenStreetMap (OSM) data and GTFS (General Transit Feed Specification) data to compute travel times via public transit and walking. Also, it includes a Jupyter notebook (`matrixOriginDestination.ipynb`) that demonstrates how to perform an origin-destination matrix analysis using various Python libraries such as `geopandas`, `shapely`, `r5py`, and `datetime`. The notebook covers the following key steps:
 
 ## Table of Contents
 
 - [Introduction](#Introduction)
 - [Requirements](#Requirements)
-- [Installation](#Installation)
-- [Usage](#Usage)
-- [Data Sources](#Data_sources)
+- [Jupyter Notebook](#Jupyter-notebook)
+- [main.py](#main.py)
+  - [Installation](#Installation)
+  - [Usage](#Usage)
+  - [Data Sources](#Data_sources)
 
 
 ## Introduction
-The script calculates the travel time between two geographic coordinates in Nairobi using the r5py library. It uses OSM data for the road network and GTFS data for public transit schedules. The example provided calculates the travel time between two points in Nairobi.
+The script `main.py` calculates the travel time between two geographic coordinates in Nairobi using the r5py library. It uses OSM data for the road network and GTFS data for public transit schedules. The example provided calculates the travel time between two points in Nairobi, you have to introduce them with the coordiantes in the vairables origin_coords and destination_coords. The Jupyter notebook using coordinates, calculate the travel time between an origin and five destinations. Both the origin and the destinations will be selected by the person running the code through a dropdown map. Additionally, within the code, the user will be able to simulate the journey at different times and days, thus being able to test the variability of public transport efficiency, not only between different areas of the city but also according to the day of the week or the time of day. For the code, we have used the r5py library, which allows us to calculate the travel time between two coordinate points. This code can be used through a Jupyter notebook matrizOrigenr5py.ipynb. 
+
 
 ## Requirements
 To run this script, you need the following:
