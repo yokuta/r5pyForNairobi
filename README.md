@@ -5,11 +5,11 @@ This repository contains a Python script (`main.py`) that calculates travel time
 
 - [Introduction](#Introduction)
 - [Jupyter Notebook](#Jupyter-notebook)
-- [main.py](#main.py)
+- [main.py](#main-py)
   - [Requirements](#Requirements)
   - [Installation](#Installation)
   - [Usage](#Usage)
-- [Data Sources](#Data_sources)
+- [Data Sources](#Data-sources)
 
 
 ## Introduction
