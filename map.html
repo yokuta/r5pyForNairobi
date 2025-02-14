@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Map</title>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+    <style>
+        #map { height: 600px; width: 100%; }
+        #coords { font-size: 18px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h2>Click on the Map to Select Origin & Destination</h2>
+    <div id="map"></div>
+    <p id="coords">Coordinates: None</p>
+    <p id="travel-time">Estimated Travel Time: Not calculated</p>
+
+    <script>
+        var map = L.map('map').setView([-1.286389, 36.817223], 12);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+    
+        var selectedPoints = [];
+        var markers = [];  // Array to store marker references
+        var clickCount = 0;  // Track the number of clicks
+    
+        function onMapClick(e) {
+            if (selectedPoints.length < 2) {
+                var lat = e.latlng.lat.toFixed(6);
+                var lon = e.latlng.lng.toFixed(6);
+    
+                // If this point was already selected, remove it
+                for (var i = 0; i < markers.length; i++) {
+                    if (markers[i].getLatLng().lat === lat && markers[i].getLatLng().lng === lon) {
+                        map.removeLayer(markers[i]); // Remove marker
+                        markers.splice(i, 1); // Remove from array
+                        selectedPoints.splice(i, 1); // Remove the corresponding point
+                        document.getElementById("coords").innerText = "Coordinates: None";
+                        return;  // Exit function after removing
+                    }
+                }
+    
+                // Add marker if it's not a duplicate
+                selectedPoints.push([lat, lon]);
+                var marker = L.marker([lat, lon]).addTo(map)
+                    .bindPopup("Selected Point: " + lat + ", " + lon)
+                    .openPopup();
+    
+                markers.push(marker);  // Add marker to the array
+    
+                document.getElementById("coords").innerText = "Selected: " + JSON.stringify(selectedPoints);
+    
+                // Send selected coordinates to Flask
+                fetch('/save-coords', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({lat: lat, lon: lon})
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.travel_time) {
+                        document.getElementById("travel-time").innerText = "Estimated Travel Time: " + data.travel_time + " minutes";
+                    }
+                    
+                    // If both coordinates are selected, attempt to close the window
+                    clickCount++;
+                    if (clickCount === 2) {
+                        alert('Both points selected! Travel time: ' + data.travel_time);
+                        window.close();  // This will attempt to close the window
+                    }
+                });
+            } else {
+                alert("You have already selected two points!");
+            }
+        }
+    
+        map.on('click', onMapClick);
+    </script>    
+</body>
+</html>
