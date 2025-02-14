@@ -1,4 +1,4 @@
-# Wasabi Cloud Tutorial
+# r5pyForNairobi
 This repository contains a Python script (main.py) that calculates travel times between two points in Nairobi, Kenya, using the r5py library. The script leverages OpenStreetMap (OSM) data and GTFS (General Transit Feed Specification) data to compute travel times via public transit and walking.
 
 ## Table of Contents
@@ -38,7 +38,7 @@ Place the downloaded files in the Data folder.
 3. Run the script:
   - python main.py
 
-**Example Output**
+**Example Output:**
 
 The script will output the estimated travel time in minutes between the origin and destination points:
   - Estimated travel time (minutes): 50
